@@ -14,7 +14,8 @@
                 <p class="w-[90%] md:w-[70%] m-auto mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
 
 
-                <form action="" class="w-[90%] md:w-[70%] m-auto">
+                <form action="" class="w-[90%] md:w-[70%] m-auto" method="post">
+                    {% csrf_token %}
                     <input name="first_name" type="text" placeholder="Enter your First name" class="w-full outline-none border rounded-2xl py-3 px-5 mb-5">
                     <input name="last_name" type="text" placeholder="Enter your Last name" class="w-full outline-none border rounded-2xl py-3 px-5 mb-5">
                     <input name="email" type="text" placeholder="Enter your Email" class="w-full outline-none border rounded-2xl py-3 px-5 mb-5">

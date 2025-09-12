@@ -15,9 +15,10 @@
                 <p class="w-[90%] md:w-[70%] m-auto mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
 
 
-                <form action="" class="w-[90%] md:w-[70%] m-auto">
-                    <input type="text" placeholder="Enter your email" class="w-full outline-none border rounded-2xl py-3 px-5 mb-5">
-                    <input type="password" placeholder="Enter your password" class="w-full outline-none border rounded-2xl py-3 px-5 mb-5">
+                <form action="" class="w-[90%] md:w-[70%] m-auto" method="post">
+                    {% csrf_token %}
+                    <input name="email" type="text" placeholder="Enter your email" class="w-full outline-none border rounded-2xl py-3 px-5 mb-5">
+                    <input name="password" type="password" placeholder="Enter your password" class="w-full outline-none border rounded-2xl py-3 px-5 mb-5">
                     <button  type="submit" class="py-3 px-5 bg-red-500 text-white text-[14px] font-semibold  rounded-xl">Login</button>
                 </form>
                 <p class="text-[14px] mt-5">Don't have an account? <a href="{% url 'web:register' %}" class="text-red-500 ">Sign up</a></p>
