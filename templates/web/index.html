@@ -1,0 +1,179 @@
+{% extends 'base/web-base.html' %}
+
+{% load static %}
+
+{% block container %}
+
+    <header class="h-[80px] shadow-md">
+        <section class="wrapper h-full flex justify-between items-center ">
+            <div>
+                <h1><a href="index.html"><img src="{% static 'web/images/logo.png' %}" alt="logo" class="w-[120px]"></a></h1>
+            </div>
+            <div class="hidden md:block">
+                <ul class="flex justify-center">
+                    <li class="mr-7"><a class="flex justify-start items-center text-[18px]" href="index.html"><img src="{% static 'web/images/home.png' %}" alt="img" class="w-[18px] mr-2">Home</a></li>
+                    <li class="mr-7"><a class="flex justify-start items-center text-[18px]" href="#"><img src="{% static 'web/images/search.png' %}" alt="img" class="w-[18px] mr-2">Search</a></li>
+                    <li class="mr-7"><a class="flex justify-start items-center text-[18px]" href="#"><img src="{% static 'web/images/bag.png' %}" alt="img" class="w-[18px] mr-2">Cart</a></li>
+                    <li><a class="flex justify-start items-center text-[18px]" href="#"><img src="{% static 'web/images/user.png' %}" alt="img" class="w-[18px] mr-2">Account</a></li>
+                </ul>
+            </div>
+            <div class="flex justify-end items-center">
+                <img src="{% static 'web/images/map.png' %}" alt="img" class="w-[18px] mr-3">
+                <p class="text-[16px] font-semibold pb-1 border-b-2 border-yellow-400">Tirur,Malappuram</p>
+            </div>
+        </section>
+    </header>
+    
+
+    <section class="py-10 wrapper">
+        <section class=" swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="{% static 'web/images/slide1.png' %}" alt="img" class="w-full rounded-2xl">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'web/images/slide2.png' %}" alt="img" class="w-full rounded-2xl">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'web/images/slide3.png' %}" alt="img" class="w-full rounded-2xl">
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section>
+        <section class="wrapper">
+            <h1 class="text-[24px]  font-semibold mb-5">What is on your mind?</h1>
+            <div class="flex justify-start overflow-scroll items-center">
+                <div class="min-w-[25%] max-w-[25%] sm:min-w-[20%] sm:max-w-[20%] md:min-w-[15%] md:max-w-[15%]">
+                    <img src="{% static 'web/images/cat3.png' %}" alt="img">
+                    <h3 class="text-center">Burger</h3>
+                </div>
+                <div class="min-w-[25%] max-w-[25%] sm:min-w-[20%] sm:max-w-[20%] md:min-w-[15%] md:max-w-[15%]">
+                    <img src="{% static 'web/images/cat2.png' %}" alt="img">
+                    <h3 class="text-center">Biriyani</h3>
+                </div>
+                <div class="min-w-[25%] max-w-[25%] sm:min-w-[20%] sm:max-w-[20%] md:min-w-[15%] md:max-w-[15%]">
+                    <img src="{% static 'web/images/cat4.png' %}" alt="img">
+                    <h3 class="text-center">Roll</h3>
+                </div>
+                <div class="min-w-[25%] max-w-[25%] sm:min-w-[20%] sm:max-w-[20%] md:min-w-[15%] md:max-w-[15%]">
+                    <img src="{% static 'web/images/cat5.png' %}" alt="img">
+                    <h3 class="text-center">Sandwich</h3>
+                </div>
+                <div class="min-w-[25%] max-w-[25%] sm:min-w-[20%] sm:max-w-[20%] md:min-w-[15%] md:max-w-[15%]">
+                    <img src="{% static 'web/images/cat6.png' %}
+                    " alt="img">
+                    <h3 class="text-center">Chinese</h3>
+                </div>
+                <div class="min-w-[25%] max-w-[25%] sm:min-w-[20%] sm:max-w-[20%] md:min-w-[15%] md:max-w-[15%]">
+                    <img src="{% static 'web/images/cat7.png' %}" alt="img">
+                    <h3 class="text-center">North</h3>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="py-10">
+        <section class="wrapper">
+            <h1 class="text-[24px]  font-semibold mb-5">Top Restaurents!</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7">
+                <div class="col-span-1 p-4 rounded-lg border">
+                    <a href="#" class="flex justify-start">
+                        <img src="{% static 'web/images/rest1.png' %}" alt="img" class="w-[35%] rounded-xl mr-4">
+                        <div class="w-[65%]">
+                            <h3 class="text-[16px] font-semibold mb-1">Manama Restaurent</h3>
+                            <p class="text-[12px] mb-4">Tasty and Healthy Foods</p>
+                            <div class="flex justify-start items-center">
+                                <span class="flex justify-start items-center mr-4">
+                                    <img src="{% static 'web/images/star.png' %}" alt="img" class="w-4 mr-2">
+                                    4.2
+                                </span>
+                                <span class="flex justify-start items-center mr-4">
+                                    <img src="{% static 'web/images/clock.png' %}" alt="img" class="w-4 mr-2">
+                                    30 min
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-span-1 p-4 rounded-lg border">
+                    <a href="#" class="flex justify-start">
+                        <img src="{% static 'web/images/rest1.png' %}" alt="img" class="w-[35%] rounded-xl mr-4">
+                        <div class="w-[65%]">
+                            <h3 class="text-[16px] font-semibold mb-1">Pizza Hut</h3>
+                            <p class="text-[12px] mb-4">Tasty and Healthy Foods</p>
+                            <div class="flex justify-start items-center">
+                                <span class="flex justify-start items-center mr-4">
+                                    <img src="{% static 'web/images/star.png' %}" alt="img" class="w-4 mr-2">
+                                    4.2
+                                </span>
+                                <span class="flex justify-start items-center mr-4">
+                                    <img src="{% static 'web/images/clock.png' %}" alt="img" class="w-4 mr-2">
+                                    30 min
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-span-1 p-4 rounded-lg border">
+                    <a href="#" class="flex justify-start">
+                        <img src="{% static 'web/images/rest1.png' %}" alt="img" class="w-[35%] rounded-xl mr-4">
+                        <div class="w-[65%]">
+                            <h3 class="text-[16px] font-semibold mb-1">Biriyani Centre</h3>
+                            <p class="text-[12px] mb-4">Tasty and Healthy Foods</p>
+                            <div class="flex justify-start items-center">
+                                <span class="flex justify-start items-center mr-4">
+                                    <img src="{% static 'web/images/star.png' %}" alt="img" class="w-4 mr-2">
+                                    4.2
+                                </span>
+                                <span class="flex justify-start items-center mr-4">
+                                    <img src="{% static 'web/images/clock.png' %}" alt="img" class="w-4 mr-2">
+                                    30 min
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            499: {
+                slidesPerView: 1,
+                spaceBetweenSlides: 50,
+            },
+            999: {
+                slidesPerView: 3,
+                spaceBetweenSlides: 50,
+            },
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        });
+    </script>
+
+
+{% endblock %}
