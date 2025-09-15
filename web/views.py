@@ -23,7 +23,11 @@ def login(request):
             auth_login(request, user)
             return HttpResponseRedirect(reverse('web:index'))
         else:
-            return render(request,'web/login.html')
+            context = {
+                'error' : True,
+                'message' : 'Invalid email or password'
+            }
+            return render(request,'web/login.html',context=context)
 
     else:
         return render(request,'web/login.html')
@@ -35,18 +39,29 @@ def register(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
 
-        user = User.objects.create_user(
-            first_name=first_name,
-            last_name=last_name,
-            email=email,
-            password=password,
-            is_customer = True
-            )
-        user.save()
+        if User.objects.filter(email=email).exists():
+            context = {
+                'error' : True,
+                'message' : 'Email already exists'
+            }
 
-        customer = Customer.objects.create(user=user)
-        customer.save()
-        return HttpResponseRedirect(reverse('web:login'))
+            return render(request,'web/register.html',context=context)
+        
+        else:
+
+            user = User.objects.create_user(
+                first_name=first_name,
+                last_name=last_name,
+                email=email,
+                password=password,
+                is_customer = True
+                )
+            user.save()
+
+            customer = Customer.objects.create(user=user)
+            customer.save()
+            return HttpResponseRedirect(reverse('web:login'))
+        
     else:
         return render(request,'web/register.html')
     
