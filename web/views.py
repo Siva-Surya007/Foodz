@@ -6,11 +6,20 @@ from django.contrib.auth.decorators import login_required
 
 from users.models import User 
 from customer.models import Customer
+from restaurent.models import StoreCategory, Store, Slider
 
 
 @login_required(login_url='/login/')
 def index(request):
-    return render(request,'web/index.html')
+    store_categories =  StoreCategory.objects.all()
+    sliders = Slider.objects.all()
+    stores = Store.objects.all()
+    context = {
+        "store_categories" : store_categories,
+        "stores" : stores,
+        'sliders' : sliders
+    } 
+    return render(request,'web/index.html',context=context)
 
 def login(request):
     if request.method == 'POST':
@@ -69,3 +78,34 @@ def register(request):
 def logout(request):
     auth_logout(request)
     return HttpResponseRedirect(reverse('web:login'))
+
+
+
+@login_required(login_url='/login/')
+def restaurents(request,id):
+
+    store_categories =  StoreCategory.objects.all()
+    stores = Store.objects.all()
+
+    selected_category = StoreCategory.objects.get(id=id)
+
+    stores = stores.filter(category = selected_category)
+    
+    context = {
+        "store_categories" : store_categories,
+        "stores" : stores
+    } 
+    
+    return render(request,'web/restaurents.html',context=context)
+
+
+
+
+def restaurent(request,id):
+    restaurent = Store.objects.get(id=id)
+
+    context = {
+        'restaurent' : restaurent
+    }
+
+    return render(request,'web/restaurent.html',context=context)

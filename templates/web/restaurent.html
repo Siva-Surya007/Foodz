@@ -1,0 +1,64 @@
+{% extends 'base/web-base.html' %}
+
+{% load static %}
+
+{% block container %}
+
+
+{% include 'includes/header.html' %}
+
+<section class="py-10 relative left-[420px]">
+        <section class="wrapper">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7">
+                <div class="col-span-1 p-4 rounded-lg border">
+                    <a href="#" class="flex justify-start">
+                        <img src="{{restaurent.image.url}}" alt="img" class="w-[35%] rounded-xl mr-4">
+                        <div class="w-[65%]">
+                            <h3 class="text-[16px] font-semibold mb-1">{{restaurent.name}}</h3>
+                            <p class="text-[12px] mb-4">{{restaurent.tagline}}</p>
+                            <div class="flex justify-start items-center">
+                                <span class="flex justify-start items-center mr-4">
+                                    <img src="{% static 'web/images/star.png' %}" alt="img" class="w-4 mr-2">
+                                    {{restaurent.rating}}
+                                </span>
+                                <span class="flex justify-start items-center mr-4">
+                                    <img src="{% static 'web/images/clock.png' %}" alt="img" class="w-4 mr-2">
+                                    {{restaurent.time}} min
+                                </span>
+                            </div>
+                            
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+    <section class="grid grid-cols-1">
+        <section class="wrapper">
+            <h1 class=" font-[600] text-[18px] text-center mr-[450px] mb-10">AL FAHAM</h1>
+            <div>
+                <div class="flex justify-center">
+                    <div class="mr-[300px]">
+                        <img src="{% static 'web/images/non.png' %}" alt="" class="h-3 mb-1 rounded-l">
+                        <h1 class="mb-2">Pepper Al Faham</h1>
+                        <h2 class="mb-2">₹ 180</h2>
+                        <h2 class="pl-2 pt-0.5 pb-0.5 bg-green-400 w-10 text-white rounded-[5px] font-[600] text-[12px]">ADD</h2>
+                    </div>
+                    <div class="">
+                        <img src="{% static 'web/images/rest1.png' %}" alt="" class="h-[120px] rounded-[7px]">
+                    </div>
+                </div>
+                <div class=" mt-5 flex justify-center mb-5">
+                    <div class="w-[40%] bg-slate-200 h-[1px] flex justify-center"></div>
+                </div>
+            </div>
+            <div class=" mt-5 flex justify-center">
+                <div class="w-[40%] bg-slate-300 h-1 flex justify-center"></div>
+            </div>
+        </section>
+    </section>
+
+
+{% endblock %}
