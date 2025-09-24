@@ -47,3 +47,50 @@ class Slider(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+
+
+
+
+
+class FoodCategory(models.Model):
+    name=models.CharField(max_length=55)
+    store = models.ForeignKey(Store,on_delete=models.CASCADE)
+
+
+    class Meta:
+        db_table = 'food_category'
+        verbose_name = 'food category'
+        verbose_name_plural = 'food categories'
+        ordering = ['-id']
+
+    def __str__(self):
+        return self.name
+
+    
+
+
+
+
+
+
+class Foods(models.Model):
+    name = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='foods')
+    price = models.FloatField()
+    foodcategory = models.ForeignKey(FoodCategory,on_delete=models.CASCADE, related_name='foods')
+    store = models.ForeignKey(Store,on_delete=models.CASCADE)
+    is_veg = models.BooleanField(default=False)
+    
+    
+
+
+    class Meta:
+        db_table = 'restaurent_foodss'
+        verbose_name = 'food'
+        verbose_name_plural = 'foods'
+        ordering = ['-id']
+
+    def __str__(self):
+        return self.name

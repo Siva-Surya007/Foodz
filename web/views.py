@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 from users.models import User 
 from customer.models import Customer
-from restaurent.models import StoreCategory, Store, Slider
+from restaurent.models import *
 
 
 @login_required(login_url='/login/')
@@ -103,9 +103,16 @@ def restaurents(request,id):
 
 def restaurent(request,id):
     restaurent = Store.objects.get(id=id)
+    food_category = FoodCategory.objects.filter(store = restaurent)
+
 
     context = {
+        'food_category' : food_category,
         'restaurent' : restaurent
     }
 
     return render(request,'web/restaurent.html',context=context)
+
+
+
+
