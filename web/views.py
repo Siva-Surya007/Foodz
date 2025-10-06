@@ -115,4 +115,6 @@ def restaurent(request,id):
 
 
 
-
+@login_required(login_url='/login/')
+def cart(request):
+    return render(request,'web/cart.html')
